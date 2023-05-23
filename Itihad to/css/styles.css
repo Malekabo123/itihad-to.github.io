@@ -235,19 +235,25 @@ header{
     text-align: center;
 }
 
+.rows:nth-child(3) p , .rows:nth-child(2) img , .rows:nth-child(4) img{
+    transform: translateX(40%);
+    opacity: 0.4;
+}
+
+.rows:nth-child(2) p , .rows:nth-child(3) img , .rows:nth-child(4) p{
+    transform: translateX(-40%);
+    opacity: 0.4;
+}
+
 .animate{
-    animation: slide-x 2s ease forwards;
+    animation: slide-x 2s ease-in-out forwards;
 }
 
 .animate-reverse{
-    animation: slide-x-reverse 2s ease forwards;
+    animation: slide-x-reverse 2s ease-in-out forwards;
 }
 
 @keyframes slide-x{
-    from{
-        opacity: 0.4;
-        transform: translateX(40%);
-    }
     to{
         opacity: 1;
         transform: translateX(0);
@@ -255,10 +261,6 @@ header{
 }
 
 @keyframes slide-x-reverse{
-    from{
-        opacity: 0.4;
-        transform: translateX(-40%);
-    }
     to{
         opacity: 1;
         transform: translateX(0);
