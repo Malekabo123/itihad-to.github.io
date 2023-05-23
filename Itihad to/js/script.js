@@ -68,32 +68,5 @@ $(window).on("load" , function(){
         $("#navbar").slideToggle();
         $(".menu-btn").removeClass("open");
         menuOpen = false;
-    });
-
-
-        
-// Flexslider
-    $(".flexslider").flexslider(
-        {
-            animation: "slide",
-            slideshowSpeed: 5000,
-            before: function() {
-                $(".content").css("bottom", "-223px")
-            },
-            start: function() {
-                $(".content").animate({
-                    bottom: "0"
-                }, 600, "easeInCirc")
-            },
-            after: function() {
-                $(".content").animate({
-                    bottom: "0"
-                }, 600, "easeInCirc")
-            }
-        }
-    );
-    
-    // Tabs
-
-    
+    });    
 });
