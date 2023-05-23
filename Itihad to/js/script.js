@@ -41,8 +41,8 @@ $(window).on("load" , function(){
         }
 
         if(top + winHeight > $('.rows:nth-child(3) img').offset().top){
-            $('.rows:nth-child(3) img').addClass('animate-reverse');
             $('.rows:nth-child(3) p').addClass('animate');
+            $('.rows:nth-child(3) img').addClass('animate-reverse');
         }
 
         if (top + winHeight > $('.rows:nth-child(4) img').offset().top) {
