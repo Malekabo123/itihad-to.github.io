@@ -2,7 +2,19 @@ $(window).on("load" , function(){
 
     let menuOpen = false;
     let headerHeight = $("header").height();
+    
     $("#navbar").css("top" , headerHeight);
+
+    
+    if (window.innerWidth < 700) {
+        $(".services").each(function(){
+            $(this).css("height",($(this).find('span').height()) + 38);
+        });
+    }else{
+        $(".services").each(function(){
+            $(this).css("height",($(this).find('span').height()) + 64);
+        });
+    }
 
     window.onresize = function() {
         if (window.innerWidth < 700) {
@@ -10,12 +22,10 @@ $(window).on("load" , function(){
             $("#navbar").css("top" , headerHeight);
 
             $(".services").each(function(){
-                console.log($(this).find('span').height());
                 $(this).css("height",($(this).find('span').height()) + 38);
             });
         }else{
             $(".services").each(function(){
-                console.log($(this).find('span').height());
                 $(this).css("height",($(this).find('span').height()) + 64);
             });
         }
@@ -68,5 +78,54 @@ $(window).on("load" , function(){
         $("#navbar").slideToggle();
         $(".menu-btn").removeClass("open");
         menuOpen = false;
-    });    
+    });
+
+
+    // Flexslider
+    $(".flexslider").flexslider(
+        {
+            animation: "slide",
+            slideshowSpeed: 10000,
+            pauseOnHover: true,
+            before: function() {
+                $(".content").css("bottom", "-100%");
+
+                $(".forH2 h2").removeClass("slideH2");
+                $(".forH2").removeClass("forBefore");
+                $(".forP p").removeClass("slideP");
+
+                $(".forH2 h2").hide();
+                $(".forP p").hide();
+            },
+
+            start: function() {
+                $(".forH2 h2").hide();
+                $(".forP p").hide();
+                $(".forH2").removeClass("forBefore");
+
+                
+                $(".content").animate({
+                    bottom: "0"
+                }, 600, function () {
+                    $(".forH2").addClass("forBefore");
+                    $(".forH2 h2").addClass("slideH2");
+                    $(".forH2 h2").show();
+                    $(".forP p").addClass("slideP");
+                    $(".forP p").show();
+                });
+            },
+
+            after: function() {
+                $(".content").animate({
+                    bottom: "0"
+                }, 600, function () {
+                    $(".forH2").addClass("forBefore");
+                    $(".forH2 h2").addClass("slideH2");
+                    $(".forH2 h2").show();
+                    $(".forP p").addClass("slideP");
+                    $(".forP p").show();
+                });
+            }
+        }
+    );
 });
