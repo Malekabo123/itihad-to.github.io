@@ -86,7 +86,8 @@ $(window).on("load" , function(){
         {
             animation: "slide",
             slideshowSpeed: 10000,
-            pauseOnHover: true,
+            touch : false,
+            keyboard: false,
             before: function() {
                 $(".content").css("bottom", "-100%");
 
