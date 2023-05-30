@@ -5,6 +5,10 @@ $(window).on("load" , function(){
     
     $("#navbar").css("top" , headerHeight);
 
+    $('.flexslider').on('click keydown', function(event) {
+        event.preventDefault();
+      });
+
     
     if (window.innerWidth < 700) {
         $(".services").each(function(){
