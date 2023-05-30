@@ -89,7 +89,7 @@ $(window).on("load" , function(){
     $(".flexslider").flexslider(
         {
             animation: "slide",
-            slideshowSpeed: 15000,
+            slideshowSpeed: 10000,
             touch : false,
             keyboard: false,
             before: function() {
